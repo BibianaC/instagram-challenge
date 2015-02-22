@@ -7,7 +7,7 @@ feature 'liking posts' do
     create_post
   end
 
-  scenario 'a user can like a post, wich updates the post likes count' do
+  scenario 'a user can like a post, wich updates the post likes count', js: true  do
     visit '/posts'
     click_button 'Like!'
     expect(page).to have_content('1 like')

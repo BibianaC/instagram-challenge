@@ -11,7 +11,7 @@ class LikesController < ApplicationController
       like = @post.likes.create
       like.user_id = current_user.id
       like.save!
-      redirect_to posts_path 
+      render json: {new_like_count: @post.likes.count}
     end
   end
 end
